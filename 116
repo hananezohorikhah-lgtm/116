@@ -1,0 +1,33 @@
+١٦_تابع ( )digit که به شکل زیر اعلان میشود را نوشته و آزمایش کنید:
+
+int digit(int n, int k);
+
+این تابع رقم kام عدد صحیح n را برمیگرداند. برای مثال اگر n عدد صحیح 29415 باشد، تابع (n,ø)digit رقم ۵ را باز میگرداند و فراخوانی (2,digit(n رقم 4 را بر می گرداند. توجه کنید که رقمها از راست به چپ و با شروع از ø شمارش می شوند.
+
+پاسخ:
+#include<iostream.h>
+
+int digit(int n, int k);
+
+int main()
+{
+    int n, k;
+
+    cout << "Enter number: ";
+    cin >> n;
+
+    cout << "Enter digit position: ";
+    cin >> k;
+
+    cout << "Digit = " << digit(n, k) << endl;
+
+    return 0;
+}
+
+int digit(int n, int k)
+{
+    for(int i = 0; i < k; i++)
+        n = n / 10;
+
+    return n % 10;
+}
